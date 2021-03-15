@@ -1,5 +1,30 @@
 import Vuex from "vuex";
 import Vue from "vue";
+import prd1 from '../assets/img/prd1.png'
+import prd2 from '../assets/img/prd2.jpg'
+import prd21 from '../assets/img/prd21.jpg';
+import prd22 from '../assets/img/prd22.jpg';
+import prd31 from '../assets/img/prd31.jpg';
+import prd32 from '../assets/img/prd32.jpg';
+import prd41 from '../assets/img/prd41.jpg';
+import prd42 from '../assets/img/prd42.jpg';
+import prd51 from '../assets/img/prd51.jpg';
+import prd52 from '../assets/img/prd52.jpg';
+import prd61 from '../assets/img/prd61.jpg';
+import prd62 from '../assets/img/prd62.jpg';
+import prd71 from '../assets/img/prd71.jpg';
+import prd72 from '../assets/img/prd72.jpg';
+import prd81 from '../assets/img/prd81.png';
+import prd82 from '../assets/img/prd82.png';
+import prd91 from '../assets/img/prj91.jpg';
+import prd92 from '../assets/img/prd92.jpg';
+import prd101 from '../assets/img/prd101.jpg';
+import prd102 from '../assets/img/prd102.jpg';
+import news1 from '../assets/img/news1.jpg';
+import news2 from '../assets/img/news2.jpg';
+import news3 from '../assets/img/news3.jpg';
+
+
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
@@ -13,9 +38,9 @@ export const store = new Vuex.Store({
                salePercent: "10%",
                hotTag: "HOT",
                image2:
-                 "http://pe.heromc.net:4000/images/9962e41e54fa69605566a7c80e888bbc",
+                 prd1,
                image1:
-                 "http://pe.heromc.net:4000/images/95f35d5eca7c964e88c9c2d467903f4c",
+                 prd2,
                type: "Backpack",
                amount: 1,
                heart: 0
@@ -26,9 +51,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 2560000,
                image2:
-                 "http://pe.heromc.net:4000/images/521c0a2d981c30a70cf0a43389908fee",
+                 prd21,
                image1:
-                 "http://pe.heromc.net:4000/images/4fde2b1275ae824587c1ea2996379ba0",
+                 prd22,
                type: "glasses",
                salePercent: "",
                hotTag: "HOT",
@@ -41,9 +66,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 1005000,
                image2:
-                 "http://pe.heromc.net:4000/images/29095924795763f04c3393b606c51591",
+                 prd31,
                image1:
-                 "http://pe.heromc.net:4000/images/d6b8dfc53e332602bf7d40004c686a46",
+                 prd32,
                type: "BAGS",
                salePercent: "15%",
                hotTag: "",
@@ -56,9 +81,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 790000,
                image2:
-                 "http://pe.heromc.net:4000/images/5dee6d0920556fae6ee4564fdd3b6d1a",
+                 prd41,
                image1:
-                 "http://pe.heromc.net:4000/images/2d97b3787a7f4e1e9f31e3345cec63e9",
+                 prd42,
                type: "PANTS",
                salePercent: "25%",
                hotTag: "HOT",
@@ -71,9 +96,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 700000,
                image2:
-                 "http://pe.heromc.net:4000/images/3f7196c3ad831ac7463458e01550af54",
+                 prd51,
                image1:
-                 "http://pe.heromc.net:4000/images/1acd30f39da76fa00695f7b23703ce16",
+                 prd52,
                type: "SKIRT",
                salePercent: "20%",
                hotTag: "",
@@ -86,9 +111,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 540000,
                image2:
-                 "http://pe.heromc.net:4000/images/016e22a1a6a107b3b816e632cbea2c69",
+                 prd61,
                image1:
-                 "http://pe.heromc.net:4000/images/d519906462961f69d686c96a37f1a6c5",
+                 prd62,
                type: "DRESS",
                salePercent: "50%",
                hotTag: "HOT",
@@ -101,9 +126,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 1250000,
                image2:
-                 "http://pe.heromc.net:4000/images/9d69ae7f2e93ae19f7a998c24a0c6012",
+                 prd71,
                image1:
-                 "http://pe.heromc.net:4000/images/9af5e5ae81452a39146138581207210c",
+                 prd72,
                type: "BAGS",
                salePercent: "",
                hotTag: "HOT",
@@ -116,9 +141,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 342000,
                image2:
-                 "http://pe.heromc.net:4000/images/9858df0365302b19972dd57cc81f7a5f",
+                 prd81,
                image1:
-                 "http://pe.heromc.net:4000/images/2b2bb6e1dcf1d15632ec38374fe5b8de",
+                 prd82,
                type: "BIKINI",
                salePercent: "12%",
                hotTag: "HOT",
@@ -131,9 +156,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 400000,
                image2:
-                 "http://pe.heromc.net:4000/images/e788eb3c31a006127303c4b62026ffd7",
+                 prd91,
                image1:
-                 "http://pe.heromc.net:4000/images/339364fab8e14ae88ab816e7ff909c25",
+                 prd92,
                type: "HATS",
                salePercent: "22%",
                hotTag: "HOT",
@@ -146,9 +171,9 @@ export const store = new Vuex.Store({
                  "Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
                price: 400000,
                image2:
-                 "http://pe.heromc.net:4000/images/9c8de606d585525f8bdc61e3a16e7e74",
+                 prd101,
                image1:
-                 "http://pe.heromc.net:4000/images/e51928f446fae4ad3efacae4a26ede69",
+                 prd102,
                type: "JACKET",
                salePercent: "34%",
                hotTag: "",
@@ -160,21 +185,21 @@ export const store = new Vuex.Store({
            newsList:[
              {
                name:'A Guide To The Best Accessories For Fall',
-               img:'http://pe.heromc.net:4000/images/170547c6437d54784f00f9d1fd3f2d3e',
+               img:news1,
                type:'INSPIRATION',
                date:'15.3.2021',
                detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'
              },
              {
                name:'The Best Street Style From Brooklyn’s 2016',
-               img:'http://pe.heromc.net:4000/images/4406c163933c4289d8e9e0a9b678c5f9',
+               img:news2,
                type:'INSPIRATION',
                date:'16.3.2021',
                detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'
              },
              {
                name:'A Minimalist Coat Is A Must For Fall',
-               img:'http://pe.heromc.net:4000/images/8b9692a68553fc0b25b44262b3af155e',
+               img:news3,
                type:'FASHION',
                date:'17.3.2021',
                detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'

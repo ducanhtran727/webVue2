@@ -10,6 +10,11 @@ Vue.component("ValidationProvider",ValidationProvider);
 Vue.component("ValidationObserver", ValidationObserver);
 Vue.use(VueRouter);
 Vue.use(Notifications)
+Vue.directive('bgImg',{
+  bind(el,binding,vnode){
+    el.style.backgroundImage.url = binding.value
+  }
+})
 const router = new VueRouter({
   mode:'history',
   routes

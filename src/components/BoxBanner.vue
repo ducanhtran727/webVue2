@@ -1,6 +1,6 @@
 <template>
   <div class="flex-center p-container">
-    <div class="box-banner-new flex-center-col box">
+    <div class="box-banner-new flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner1 + ')' }">
       <div class="box-banner-title">New Arrivals</div>
       <div class="box-banner-child flex-center">
         <router-link to="/">
@@ -10,7 +10,7 @@
     </div>
     <div class="box-banner-container">
       <div class="flex-center">
-        <div class="box-women flex-center-col box">
+        <div class="box-women flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner2 + ')' }">
           <div class="box-banner-title-small">WOMEN</div>
           <div class="box-banner-child flex-center">
             <router-link to="/women">
@@ -18,7 +18,7 @@
             </router-link>
           </div>
         </div>
-        <div class="box-men flex-center-col box">
+        <div class="box-men flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner3 + ')' }">
           <div class="box-banner-title-small">MEN</div>
           <div class="box-banner-child flex-center">
             <router-link to="/men">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="box-info flex-center-col box">
+      <div class="box-info flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner4 + ')' }">
         <div class="box-banner-title-small">Free Ship On All Oder</div>
         <div class="box-banner-child flex-center">
           <router-link to="/">
@@ -38,9 +38,18 @@
     </div>
   </div>
 </template>
-
 <script>
-export default {}
+import boxbanner1 from '../assets/img/boxbanner1.jpg';
+import boxbanner2 from '../assets/img/boxbanner2.jpg';
+import boxbanner3 from '../assets/img/boxbanner3.jpg';
+import boxbanner4 from '../assets/img/boxbanner4.jpg';
+export default {
+  data(){
+    return{
+      boxbanner1,boxbanner2,boxbanner3,boxbanner4
+    }
+  }
+}
 </script>
 <style scoped>
 .flex-center {
@@ -59,28 +68,28 @@ flex-direction: column;
     margin-top: 40px ;
 }
 .box-banner-new{
-    background-image: url("http://pe.heromc.net:3000/static/media/b1.694cdc73.jpg");
+    /* background-image: url("http://pe.heromc.net:3000/static/media/b1.694cdc73.jpg"); */
     background-position: center;
     background-size:cover;
     height: 80vh;
     width: 50vw;
 }
 .box-women{
-   background-image: url("http://pe.heromc.net:3000/static/media/b2.48947481.jpg");
+   /* background-image: url("http://pe.heromc.net:3000/static/media/b2.48947481.jpg"); */
    background-position: center;
    background-size: cover;
     height: 40vh;
     width: 25vw;
 }
 .box-men{
-   background-image: url("http://pe.heromc.net:3000/static/media/b3.53dcbf6b.jpg");
+   /* background-image: url("http://pe.heromc.net:3000/static/media/b3.53dcbf6b.jpg"); */
     background-position: center;
     background-size:cover;
     height: 40vh;
     width: 25vw;
 }
 .box-info{
-    background-image: url("http://pe.heromc.net:3000/static/media/b4.4bbfaeec.jpg");
+    /* background-image: url("http://pe.heromc.net:3000/static/media/b4.4bbfaeec.jpg"); */
     background-position: center;
     background-size:cover;
     height: 40vh;

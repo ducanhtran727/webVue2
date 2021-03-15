@@ -12,8 +12,14 @@
     </div>
 </template>
 <script>
+
 export default {
-    props:['news']
+    props:['news'],
+    data(){
+        return{
+        
+        }
+    }
 }
 </script>
 <style scoped>
