@@ -1,5 +1,5 @@
 <template>
-  <div class="top-news">
+  <div class="top-news" v-bind:style="{ backgroundImage: 'url(' + banner1 + ')' }">
     <div class="box-title">
       <h1 class="title">MEN</h1>
       <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
@@ -8,19 +8,24 @@
 </template>
 
 <script>
-
+import banner1 from '../assets/img/firstbanner.jpg'
 export default {
-
+ data(){
+   return{
+     banner1
+   }
+ }
   
 }
 </script>
+
 <style scoped>
   .link-to-home{
     text-decoration: none;
     color: black;
   }
   .top-news{
-    background-image: url('http://pe.heromc.net:3000/static/media/S1.47a7deff.jpg');
+    /* background-image: url('http://pe.heromc.net:3000/static/media/S1.47a7deff.jpg'); */
     width: 100vw;
     height: 70vh;
     background-position: center;
