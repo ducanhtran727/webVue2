@@ -1,6 +1,6 @@
 <template>
   <div>
-    <notifications group="cart" width=500 height=500 position='top right' />
+    <notifications group="cart" width="500" height="500" position="top right" />
     <home-banner></home-banner>
     <box-banner></box-banner>
     <div class="home-tab">
@@ -8,13 +8,17 @@
       <p class="tab-name">New Products</p>
       <p class="tab-name">Sales Products</p>
     </div>
-    <div class="product-list" >
+    <div class="product-list">
       <box-product
-      v-for="(item,index) in productList"
+        v-for="(item, index) in productList"
         :key="index"
         :product="item"
         :index="index"
       ></box-product>
+    </div>
+    <h2 class="text-center title-news">Fashion News</h2>
+    <div class="news-list">
+      <box-news v-for="(item ,index ) in newsList" :key="index" :news="item"></box-news>
     </div>
   </div>
 </template>
@@ -23,20 +27,37 @@
 import Banner from '../components/Baner'
 import BoxBanner from '../components/BoxBanner'
 import BoxProduct from '../components/boxProduct'
+import BoxNews from '../components/boxNews'
 export default {
   components: {
     homeBanner: Banner,
     boxBanner: BoxBanner,
     boxProduct: BoxProduct,
+    boxNews: BoxNews,
   },
   computed: {
-    productList(){
+    productList() {
       return this.$store.state.productList
     },
+    newsList(){
+      return this.$store.state.newsList
+    }
   },
 }
 </script>
-<style>
+<style scoped>
+.news-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.title-news {
+  margin-top: 25px;
+}
+.text-center {
+  text-align: center;
+}
 .product-list {
   display: flex;
   flex-wrap: wrap;

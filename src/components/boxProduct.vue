@@ -96,7 +96,7 @@ export default {
   width: 100%;
 }
 .box-icon {
-  background-color: #ecf0f1;
+  background-color: #ffeaa7;
   cursor: pointer;
   width: 42px;
   height: 42px;
@@ -128,19 +128,37 @@ export default {
   transform: scale(1);
   transition: all 1s;
   animation-name: upFade;
-  animation-duration: 0.4s;
+  animation-duration: 0.6s;
+}
+.cart-icon{
+  transform: scale(0);
+  transition: all 1s;
+  animation-name: downFade;
+  animation-duration: 0.6s;
 }
 .box-product:hover .eye-icon {
   transform: scale(1);
   transition: all 1s;
   animation-name: upFade;
-  animation-duration: 0.6s;
+  animation-duration: 0.8s;
+}
+.eye-icon{
+  transform: scale(0);
+  transition: all 1s;
+  animation-name: downFade;
+  animation-duration: 0.8s;
 }
 .box-product:hover .favorite-icon {
   transform: scale(1);
   transition: all 1s;
   animation-name: upFade;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
+}
+.favorite-icon{
+  transform: scale(0);
+  transition: all 1s;
+  animation-name: downFade;
+  animation-duration: 1s;
 }
 .img-product2 {
   opacity: 1;

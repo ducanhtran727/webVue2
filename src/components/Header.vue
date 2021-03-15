@@ -1,33 +1,46 @@
 <template>
   <div class="header" id="header">
     <ul class="menu">
-      <router-link to="/" class="item-menu"
-        ><a class="item-link">HOME</a></router-link
-      >
+      <router-link to="/" class="item-menu">
+        <a class="item-link">HOME</a>
+      </router-link>
       <div @mouseover="womenMenuMouseOver()" @mouseout="womenMenuMouseLeave()">
-        <router-link to="/" id="womenMenu" class="item-menu women-menu"
-          ><a class="item-link">WOMEN</a
-          ><drop-down :menuDropDown="menuDropDownWomen" v-show="womenMenu"></drop-down
-        ></router-link>
+        <router-link to="/women" id="womenMenu" class="item-menu women-menu">
+          <a class="item-link">WOMEN</a>
+          <drop-down
+            :menuDropDown="menuDropDownWomen"
+            class="dropdown"
+            v-show="womenMenu"
+          ></drop-down>
+        </router-link>
       </div>
-      <div class="men-item" @mouseover="menMenuMouseOver()" @mouseout="menMenuMouseLeave()">
-        <router-link to="/" class="item-menu"
-          ><a class="item-link">MEN</a>
-          <drop-down :menuDropDown="menuDropDownMen" v-show="menMenu"></drop-down></router-link
-        >
+      <div
+        class="men-item"
+        @mouseover="menMenuMouseOver()"
+        @mouseout="menMenuMouseLeave()"
+      >
+        <router-link to="/men" class="item-menu">
+          <a class="item-link">MEN</a>
+          <drop-down
+            :menuDropDown="menuDropDownMen"
+            class="dropdown"
+            v-show="menMenu"
+          ></drop-down>
+        </router-link>
       </div>
-      <router-link to="/" class="item-menu"
-        ><a class="item-link">NEWS</a></router-link
-      >
-      <router-link to="/" class="item-menu"
-        ><a class="item-link">CONTACT</a></router-link
-      >
+      <router-link to="/news" class="item-menu">
+        <a class="item-link">NEWS</a>
+      </router-link>
+      <router-link to="/contact" class="item-menu">
+        <a class="item-link">CONTACT</a>
+      </router-link>
     </ul>
     <router-link class="logo" to="/">
-      <a
-        ><img
+      <a>
+        <img
           src="https://demo.uix.store/sober/wp-content/themes/sober/images/logo.svg"
-      /></a>
+        />
+      </a>
     </router-link>
     <div class="menu-icon">
       <div class="icon" @click="searchClick()">
@@ -36,7 +49,9 @@
       <div class="icon cart-container" @click="cartClick()">
         <img :src="cartImg" />
         <div class="counter-cart">
-          <p v-if="this.$store.state.cartList.length">{{this.$store.state.cartList.length}}</p>
+          <p v-if="this.$store.state.cartList.length">
+            {{ this.$store.state.cartList.length }}
+          </p>
         </div>
       </div>
       <div class="icon" @click="loginClick()">
@@ -44,10 +59,12 @@
       </div>
     </div>
     <template v-if="iconStatus == 'search'">
-      <transition enter-class=""
-                  enter-active-class=""
-                  leave-class=""
-                  leave-active-class="">
+      <transition
+        enter-class=""
+        enter-active-class=""
+        leave-class=""
+        leave-active-class=""
+      >
         <search-modal @closeSearch="iconStatus = $event"></search-modal>
       </transition>
     </template>
@@ -61,13 +78,13 @@
 </template>
 
 <script>
-import search from "../assets/img/search-black-18dp.svg";
-import cart from "../assets/img/cart.svg";
-import loginIcon from "../assets/img/person-black-18dp.svg";
-import Dropdown from "./Dropdown";
-import SearchModal from "./Search";
-import CartModal from './Cart';
-import LoginModal from './Login';
+import search from '../assets/img/search-black-18dp.svg'
+import cart from '../assets/img/cart.svg'
+import loginIcon from '../assets/img/person-black-18dp.svg'
+import Dropdown from './Dropdown'
+import SearchModal from './Search'
+import CartModal from './Cart'
+import LoginModal from './Login'
 export default {
   data() {
     return {
@@ -75,61 +92,67 @@ export default {
       cartImg: cart,
       loginImg: loginIcon,
       womenMenu: false,
-      menMenu:false,
-      iconStatus: "",
-      menuDropDownMen:[
-          {title:"YOUR-CITY" , content:['Sai Gon','Ha Noi','Hung Yen','Hai Phong','Quang Linh']},
-          {title:"YOUR-CITY" , content:['Sai Gon','Ha Noi','Hung Yen','Hai Phong','Quang Linh']},
-          {title:"YOUR-CIRY" , content:['Sai Gon','Ha Noi','Hung Yen','Hai Phong','Quang Linh']},
+      menMenu: false,
+      iconStatus: '',
+      menuDropDownMen: [
+        { title: 'BAGS', content: ['Backpack', 'Business Bags', 'Mini Bags'] },
+        {
+          title: 'READY-TO-WERE',
+          content: ['Vest', 'Hats', 'Pants', 'Jacket', 'Tops & Shirts'],
+        },
+        { title: 'SHOES', content: ['Lace-Up Shoes'] },
       ],
-      menuDropDownWomen:[
-          {title:"COUNTRY" , content:['Viet Nam','ThaiLand','Korean','China','Japan']},
-          {title:"COUNTRY" , content:['Viet Nam','ThaiLand','Korean','China','Japan']},
-          {title:"COUNTRY" , content:['Viet Nam','ThaiLand','Korean','China','Japan']},
-          {title:"COUNTRY" , content:['Viet Nam','ThaiLand','Korean','China','Japan']},
+      menuDropDownWomen: [
+        {
+          title: 'READY-TO-WERE',
+          content: ['Shirst', 'Bikini', 'Pant', 'Dress', 'Tote Bags'],
+        },
+        { title: 'HAND BAGS', content: ['Top Hand Bags', 'Tote Hand Bags'] },
+        { title: 'ACCESSTORIS', content: ['Sunglasses'] },
+        { title: 'JACKET', content: ['Classic Toper'] },
       ],
-    };
+    }
   },
   components: {
     dropDown: Dropdown,
     searchModal: SearchModal,
-    cartModal:CartModal,
-    loginModal:LoginModal
+    cartModal: CartModal,
+    loginModal: LoginModal,
   },
   methods: {
     womenMenuMouseOver() {
-      console.log(this.womenMenu);
-      document.getElementById("header").classList.add("bot-border");
-      return (this.womenMenu = true);
+      console.log(this.womenMenu)
+      document.getElementById('header').classList.add('bot-border')
+      this.$emit('stay', true)
+      return (this.womenMenu = true)
     },
     womenMenuMouseLeave() {
-      document
-        .getElementById("header")
-        .classList.remove("bot-border");
-      return (this.womenMenu = false);
+      document.getElementById('header').classList.remove('bot-border')
+      this.$emit('stay', false)
+      return (this.womenMenu = false)
     },
     menMenuMouseOver() {
-      document.getElementById("header").classList.add("bot-border");
-      return (this.menMenu = true);
+      document.getElementById('header').classList.add('bot-border')
+      this.$emit('stay', true)
+      return (this.menMenu = true)
     },
-    menMenuMouseLeave(){
-      document
-        .getElementById("header")
-        .classList.remove("bot-border");
-      return (this.menMenu = false);
+    menMenuMouseLeave() {
+      document.getElementById('header').classList.remove('bot-border')
+      this.$emit('stay', false)
+      return (this.menMenu = false)
     },
     searchClick() {
-      this.iconStatus = "search";
-      console.log(this.iconStatus);
+      this.iconStatus = 'search'
+      console.log(this.iconStatus)
     },
-    cartClick(){
-        this.iconStatus = "cart"
+    cartClick() {
+      this.iconStatus = 'cart'
     },
-    loginClick(){
-        this.iconStatus = "login"
-    }
+    loginClick() {
+      this.iconStatus = 'login'
+    },
   },
-};
+}
 </script>
 <style scoped>
 .header {
@@ -140,15 +163,15 @@ export default {
   z-index: 9999;
   padding: 0 20px;
   display: grid;
-  transition: all .5s;
+  transition: all 0.5s;
   grid-template-columns: repeat(12, 1fr);
   background: rgba(204, 204, 204, 0);
 }
-.header:hover{
+.header:hover {
   background-color: white;
-  transition: all .5s;
+  transition: all 0.5s;
 }
-.move-top{
+.move-top {
   top: -100px;
 }
 .d-none {
@@ -186,7 +209,7 @@ export default {
   color: black;
 }
 .item-link::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   background: #000;

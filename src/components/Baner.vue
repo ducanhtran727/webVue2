@@ -28,8 +28,7 @@
         ></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active"  data-bs-interval="5000">
-          <img :src="banner3" class="d-block w-100">
+        <div class="carousel-item active hello1"  data-bs-interval="5000">
           <div class="carousel-caption d-none d-md-block">
             <transition
               appear
@@ -40,17 +39,11 @@
             </transition>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img
-            :src="banner2"
-            class="d-block w-100"
-          />
+        <div class="carousel-item hello2" data-bs-interval="2000">
+         
         </div>
-        <div class="carousel-item">
-          <img
-            :src="banner1"
-            class="d-block w-100"
-          />
+        <div class="carousel-item hello3">
+         
         </div>
       </div>
     </div>
@@ -58,21 +51,33 @@
 </template>
 
 <script>
-import banner1 from '../assets/img/firstBanner.jpg';
-import banner2 from '../assets/img/banner2.jpg';
-import banner3 from '../assets/img/banner3.jpg';
 export default {
-  data(){
-    return{
-      banner1,
-      banner2,banner3,
-      color:'red'
-    }
-  }
-
+  
 }
 </script>
 <style scoped>
+.hello1{
+  background-image: url('http://pe.heromc.net:3000/static/media/S1.47a7deff.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.hello2{
+  background-image: url('http://pe.heromc.net:3000/static/media/S3.7ad70116.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.hello3{
+  background-image: url('http://pe.heromc.net:3000/static/media/S2.1cedb505.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
 .banner {
   height: 713px;
 

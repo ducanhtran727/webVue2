@@ -11,6 +11,9 @@
           <div class="hot-tag" v-if="product.hotTag">
             {{product.hotTag}}
           </div>
+          <div class="heart-tag">
+            {{product.heart}}<img :src="favoriteIcon" />
+          </div>
         </div>
       </div>
       <div class="box-info">
@@ -18,7 +21,7 @@
         <p class="sub-title">
           {{product.description}}
         </p>
-        <h4>{{product.price}}</h4>
+        <h4>{{product.price}} Đ</h4>
         <button class="btn-cart">Add To Cart</button>
         <hr>
         <p>Category : {{product.type}}</p>
@@ -27,12 +30,13 @@
     </div>
   </div>
 </template>
-
 <script>
+import favoriteIcon from '../assets/img/favorite.svg'
 export default {
   props:['product'],
   data() {
     return {
+      favoriteIcon
     }
   },
   methods:{
@@ -89,7 +93,7 @@ export default {
   background-color: #1abc9c;
   color: whitesmoke;
 }
-.hot-tag {
+.hot-tag{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +104,17 @@ export default {
   font-weight: 600;
   background-color: #ff7675;
   color: whitesmoke;
+}
+.heart-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  width: 40px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #74b9ff;
 }
 .product-detail {
   position: relative;

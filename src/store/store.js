@@ -156,6 +156,46 @@ export const store = new Vuex.Store({
                heart: 0
              }
            ],
-           cartList: []
-         }
+           cartList: [],
+           newsList:[
+             {
+               name:'A Guide To The Best Accessories For Fall',
+               img:'http://pe.heromc.net:4000/images/170547c6437d54784f00f9d1fd3f2d3e',
+               type:'INSPIRATION',
+               date:'15.3.2021',
+               detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'
+             },
+             {
+               name:'The Best Street Style From Brooklyn’s 2016',
+               img:'http://pe.heromc.net:4000/images/4406c163933c4289d8e9e0a9b678c5f9',
+               type:'INSPIRATION',
+               date:'16.3.2021',
+               detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'
+             },
+             {
+               name:'A Minimalist Coat Is A Must For Fall',
+               img:'http://pe.heromc.net:4000/images/8b9692a68553fc0b25b44262b3af155e',
+               type:'FASHION',
+               date:'17.3.2021',
+               detail:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...'
+             }
+           ],
+           value:''
+         },
+         getters:{
+           productFilter: state => {
+             return state.productList.filter(item => item.name.toLowerCase().indexOf(state.value))
+           }
+         },
+        //  mutations :{
+        //    updateValue: (state ,payload) =>{
+        //      state.value = payload
+        //    }
+        //  },
+        //  actions: {
+        //    actionUpdate : ({commit},payload) =>{
+        //      commit("updateValue",payload)
+        //    }
+        //  }
+        //  mutations
        });

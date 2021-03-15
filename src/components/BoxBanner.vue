@@ -13,7 +13,7 @@
         <div class="box-women flex-center-col box">
           <div class="box-banner-title-small">WOMEN</div>
           <div class="box-banner-child flex-center">
-            <router-link to="/">
+            <router-link to="/women">
               <a class="box-banner-link">Shop Now</a>
             </router-link>
           </div>
@@ -21,7 +21,7 @@
         <div class="box-men flex-center-col box">
           <div class="box-banner-title-small">MEN</div>
           <div class="box-banner-child flex-center">
-            <router-link to="/">
+            <router-link to="/men">
               <a class="box-banner-link">Shop Now</a>
             </router-link>
           </div>

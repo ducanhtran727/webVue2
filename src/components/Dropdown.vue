@@ -35,13 +35,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" class="d-block w-100" alt="..." />
+            <img src="https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" class="d-block w-100"/>
           </div>
           <div class="carousel-item" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/sky.jpg" class="d-block w-100" alt="..." />
+            <img src="https://cdn.vuetifyjs.com/images/carousel/sky.jpg" class="d-block w-100"/>
           </div>
           <div class="carousel-item" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/bird.jpg" class="d-block w-100" alt="..." />
+            <img src="https://cdn.vuetifyjs.com/images/carousel/bird.jpg" class="d-block w-100"/>
           </div>
         </div>
       </div>
@@ -83,7 +83,8 @@ export default {
   border: 1px solid lightgray;
   background-color: white;
   display: flex;
-  align-items: center;
+  padding-top: 50px;
+  align-items: flex-start;
   justify-content: space-around;
   /* background-color: lightblue; */
   width: 92.5%;

@@ -8,7 +8,7 @@
     <div class="search-container fadeUp">
       <div class="box-search">
         <img :src="iconSearch" />
-        <input placeholder="Search name product" type="text" v-model="search" />
+        <input placeholder="Search name product" type="text"  v-model="search"  />
       </div>
       <div class="product-filter" v-for="(item , index) in productFilter" :key="index">
         <div class="box-image">
@@ -25,7 +25,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import searchIcon from '../assets/img/search-black-18dp.svg'
 import closeIcon from '../assets/img/close.svg'
@@ -50,13 +49,13 @@ export default {
         text: 'Check Your Cart',
         duration:500
       })
-    }
+    },
   },
   computed:{
     productFilter(){
-      return this.$store.state.productList.filter(item=>item.name.indexOf(this.search))
+        return this.$store.state.productList.filter(item => item.name.toLowerCase().indexOf(this.search ? this.search : null) > -1)   
     }
-  }
+  },
 }
 </script>
 <style scoped>

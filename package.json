@@ -1,17 +1,22 @@
 {
   "name": "prjvue",
   "description": "A Vue.js project",
+  "homepage": "https://ducanhtran727.github.io/webvue",
   "version": "1.0.0",
   "author": "ducanhtran727 <caocunjcyc@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.21.1",
+    "gh-pages": "^3.1.0",
+    "material-design-icons": "^3.0.1",
     "vee-validate": "^3.4.5",
     "vue": "^2.5.11",
     "vue-notification": "^1.3.20",
