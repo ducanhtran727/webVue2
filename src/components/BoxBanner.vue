@@ -3,7 +3,7 @@
     <div class="box-banner-new flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner1 + ')' }">
       <div class="box-banner-title">New Arrivals</div>
       <div class="box-banner-child flex-center">
-        <router-link to="/">
+        <router-link to="/shop">
           <a class="box-banner-link ">Shop Now</a>
         </router-link>
       </div>
@@ -30,8 +30,8 @@
       <div class="box-info flex-center-col box" v-bind:style="{ backgroundImage: 'url(' + boxbanner4 + ')' }">
         <div class="box-banner-title-small">Free Ship On All Oder</div>
         <div class="box-banner-child flex-center">
-          <router-link to="/">
-            <a class="box-banner-link">Shop Now</a>
+          <router-link to="/shop">
+            <a class="box-banner-link" >Shop Now</a>
           </router-link>
         </div>
       </div>

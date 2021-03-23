@@ -19,7 +19,7 @@
         </ul>
       </div>
       <div class="box-right">
-        <div class="sub-title">ALL Product </div>
+        <div class="sub-title" @click="backToAll()">ALL Product </div>
         <hr>
         <div class="list-product">
           <box-product  v-for="(item ,index) in womenList" :key="index" :product="item" :index="index"></box-product>
@@ -63,6 +63,9 @@ export default {
   methods:{
     filterType(item){
       this.$router.push(`/women/${item}`)
+    },
+    backToAll(){
+      this.$router.push('/women')
     }
   }
 
@@ -73,9 +76,27 @@ export default {
   font-size: 20px;
   font-weight: bold;
 }
-.sub-title{
+.sub-title {
   font-size: 25px;
+  display: inline;
   font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+.sub-title::after{
+    content:'';
+    display: block;
+    height: 2px;
+    left: 0;
+    position:absolute;
+    transition: all .5s;
+    width: 0%;
+    background-color: black;
+}
+.sub-title:hover::after{
+    width: 100%;
+    right: 0;
+    transition: all .5s;
 }
 .box-right{
   text-align: center;

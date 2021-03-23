@@ -6,7 +6,7 @@
       v-bind:style="{ backgroundImage: 'url(' + banner1 + ')' }"
     >
       <div class="box-title">
-        <h1 class="title">MEN</h1>
+        <h1 class="title">Shop</h1>
         <h2>{{params}}</h2>
         <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
       </div>
@@ -23,7 +23,7 @@
         <hr />
         <div class="list-product">
           <box-product
-            v-for="(item, index) in menList"
+            v-for="(item, index) in shopList"
             :key="index"
             :product="item"
             :index="index"
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       banner1,
-      listType:['Sunglasses','Backpack','Bags','Hats','Shoes','Vest'],
+      listType:['Sunglasses','Backpack','Bags','Hats','Shoes','Vest','Pants','Bikini','Dress','Jacket'],
       params : this.$route.params.id
     }
   },
@@ -49,21 +49,21 @@ export default {
     boxProduct
   },
   computed:{
-    menList(){
+    shopList(){
      if(this.params){
-        const menList = this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'men')
-      return menList.filter(item => item.type.toLowerCase() === this.params.toLowerCase())
+        const shopList = this.$store.state.productList
+      return shopList.filter(item => item.type.toLowerCase() === this.params.toLowerCase())
      }else{
-       return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'men')
+       return this.$store.state.productList
      }
     }
   },
   methods:{
     filterType(item){
-      this.$router.push(`/men/${item}`)
+      this.$router.push(`/shop/${item}`)
     },
     backToAll(){
-      this.$router.push('/men')
+        this.$router.push('/shop')
     }
   },
   watch:{
