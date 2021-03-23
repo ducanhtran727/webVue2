@@ -4,12 +4,24 @@
     <p>Get timely updates from your favorite products</p>
     <div class="input-box">
       <input placeholder="Enter your email" />
-      <div class="btn-subcribe">Subcribe</div>
+      <div class="btn-subcribe" @click="sendEmail()">Subcribe</div>
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  methods:{
+    sendEmail(){
+      this.$notify({
+        group: 'subcribe',
+        type: 'success',
+        title: 'Subcribe Success',
+        text: 'Welcome to Sober',
+        duration:500
+      })
+    }
+  }
+}
 </script>
 <style scoped>
 p{

@@ -22,7 +22,7 @@
           {{product.description}}
         </p>
         <h4>{{product.price}} Đ</h4>
-        <button class="btn-cart">Add To Cart</button>
+        <button class="btn-cart" @click="addToCart(product)">Add To Cart</button>
         <hr>
         <p>Category : {{product.type}}</p>
         <hr>
@@ -42,7 +42,17 @@ export default {
   methods:{
     closeModal(){
       this.$emit('closeModal',false);
-    }
+    },
+    addToCart(item){
+      this.$store.state.cartList.push(item)
+      this.$notify({
+        group: 'cart',
+        type: 'success',
+        title: 'Add To Cart Success',
+        text: 'Check Your Cart',
+        duration:500
+      })
+    },
   }
 }
 </script>

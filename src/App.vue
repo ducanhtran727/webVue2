@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="app">
+    <notifications group="subcribe" width="500" height="500" position="bottom right" />
     <app-header id="header" @stay="stay = $event"  />
     <router-view />
     <app-subcribe></app-subcribe>

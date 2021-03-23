@@ -1,11 +1,13 @@
 <template>
   <div>
+    <notifications group="cart" width="500" height="500" position="bottom right" />
     <div
       class="top-news"
       v-bind:style="{ backgroundImage: 'url(' + banner3 + ')' }"
     >
       <div class="box-title">
         <h1 class="title">WOMEN</h1>
+        <h2>{{params}}</h2>
         <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
       </div>
     </div>
@@ -13,17 +15,11 @@
       <div class="filter-type">
         <div class="title-type">Product Categories</div>
         <ul>
-          <li>Sunglasses</li>
-          <li>Dress</li>
-          <li>Shirt</li>
-          <li>Bikini</li>
-          <li>Pants</li>
-          <li>Jacket</li>
-          <li>Bags</li>
+          <li v-for="(item,index) in listType" :key="index" @click="filterType(item)">{{item}}</li>
         </ul>
       </div>
       <div class="box-right">
-        <div class="sub-title">ALL Product</div>
+        <div class="sub-title">ALL Product </div>
         <hr>
         <div class="list-product">
           <box-product  v-for="(item ,index) in womenList" :key="index" :product="item" :index="index"></box-product>
@@ -39,6 +35,8 @@ export default {
   data() {
     return {
       banner3,
+      listType:['Sunglasses','Dress','Shirt','Bikini','Pants','Jacket','Bags'],
+      params : this.$route.params.id
     }
   },
   components:{
@@ -46,11 +44,26 @@ export default {
   },
   computed:{
     womenList(){
-     return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'women')
+      if(this.params){
+        const womenList = this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'women')
+        console.log(womenList)
+        return womenList.filter(item => item.type.toLowerCase() === this.params.toLowerCase())
+      }
+     else{
+       return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'women')
+     }
+    },
+  },
+  watch:{
+    '$route'(to , from ){
+      this.params = to.params.id
+      console.log(this.params)
     }
   },
-  created(){
-    console.log(this.womenList)
+  methods:{
+    filterType(item){
+      this.$router.push(`/women/${item}`)
+    }
   }
 
 }

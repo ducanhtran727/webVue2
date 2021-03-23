@@ -6,14 +6,15 @@
       </router-link>
       <div @mouseover="womenMenuMouseOver()" @mouseout="womenMenuMouseLeave()">
         <router-link to="/women" id="womenMenu" class="item-menu women-menu">
-          <a class="item-link">WOMEN</a>
-          <drop-down
-            :menuDropDown="menuDropDownWomen"
-            :image="imgWomen"
-            class="dropdown"
-            v-show="womenMenu"
-          ></drop-down>
-        </router-link>
+          <a class="item-link">WOMEN</a></router-link
+        >
+        <drop-down
+          :menuDropDown="menuDropDownWomen"
+          :image="imgWomen"
+          :gender="gender.women"
+          class="dropdown"
+          v-show="womenMenu"
+        ></drop-down>
       </div>
       <div
         class="men-item"
@@ -21,14 +22,15 @@
         @mouseout="menMenuMouseLeave()"
       >
         <router-link to="/men" class="item-menu">
-          <a class="item-link">MEN</a>
-          <drop-down
-            :menuDropDown="menuDropDownMen"
-            :image="imgMen"
-            class="dropdown"
-            v-show="menMenu"
-          ></drop-down>
-        </router-link>
+          <a class="item-link">MEN</a></router-link
+        >
+        <drop-down
+          :menuDropDown="menuDropDownMen"
+          :image="imgMen"
+          class="dropdown"
+          :gender="gender.men"
+          v-show="menMenu"
+        ></drop-down>
       </div>
       <router-link to="/news" class="item-menu">
         <a class="item-link">NEWS</a>
@@ -79,13 +81,13 @@
   </div>
 </template>
 <script>
-import search from '../assets/img/search-black-18dp.svg'
-import cart from '../assets/img/cart.svg'
-import loginIcon from '../assets/img/person-black-18dp.svg'
-import Dropdown from './Dropdown'
-import SearchModal from './Search'
-import CartModal from './Cart'
-import LoginModal from './Login'
+import search from "../assets/img/search-black-18dp.svg";
+import cart from "../assets/img/cart.svg";
+import loginIcon from "../assets/img/person-black-18dp.svg";
+import Dropdown from "./Dropdown";
+import SearchModal from "./Search";
+import CartModal from "./Cart";
+import LoginModal from "./Login";
 export default {
   data() {
     return {
@@ -94,69 +96,74 @@ export default {
       loginImg: loginIcon,
       womenMenu: false,
       menMenu: false,
-      iconStatus: '',
+      iconStatus: "",
       menuDropDownMen: [
-        { title: 'BAGS', content: ['Backpack', 'Business Bags', 'Mini Bags'] },
+        { title: "BAGS", content: ["Backpack", "Bags", "Bags"] },
         {
-          title: 'READY-TO-WERE',
-          content: ['Vest', 'Hats', 'Pants', 'Jacket'],
+          title: "READY-TO-WERE",
+          content: ["Vest", "Hats"]
         },
-        { title: 'SHOES', content: ['Lace-Up Shoes'] },
+        { title: "SHOES", content: ["Shoes"] }
       ],
       menuDropDownWomen: [
         {
-          title: 'READY-TO-WERE',
-          content: ['Shirst', 'Bikini', 'Pant', 'Dress'],
+          title: "READY-TO-WERE",
+          content: ["Shirt", "Bikini", "Pants", "Dress"]
         },
-        { title: 'HAND BAGS', content: ['Top Hand Bags',] },
-        { title: 'ACCESSTORIS', content: ['Sunglasses'] },
-        { title: 'JACKET', content: ['jacket'] },
+        { title: "HAND BAGS", content: ["Bags"] },
+        { title: "ACCESSTORIS", content: ["Sunglasses"] },
+        { title: "JACKET", content: ["jacket"] }
       ],
-      imgMen:'https://www.louisvuitton.com/images/louis-vuitton--M_Fa_RW_mens_summer_21_DI3.jpg?wid=1080',
-      imgWomen:'https://www.louisvuitton.com/images/louis-vuitton--W_Fa_LG_Womens_2021_Summer_Collection_ME_DI3.jpg?wid=2048'
-
-    }
+      imgMen:
+        "https://www.louisvuitton.com/images/louis-vuitton--M_Fa_RW_mens_summer_21_DI3.jpg?wid=1080",
+      imgWomen:
+        "https://www.louisvuitton.com/images/louis-vuitton--W_Fa_LG_Womens_2021_Summer_Collection_ME_DI3.jpg?wid=2048",
+      gender: {
+        men: "men",
+        women: "women"
+      }
+    };
   },
   components: {
     dropDown: Dropdown,
     searchModal: SearchModal,
     cartModal: CartModal,
-    loginModal: LoginModal,
+    loginModal: LoginModal
   },
   methods: {
     womenMenuMouseOver() {
-      console.log(this.womenMenu)
-      document.getElementById('header').classList.add('bot-border')
-      this.$emit('stay', true)
-      return (this.womenMenu = true)
+      console.log(this.womenMenu);
+      document.getElementById("header").classList.add("bot-border");
+      this.$emit("stay", true);
+      return (this.womenMenu = true);
     },
     womenMenuMouseLeave() {
-      document.getElementById('header').classList.remove('bot-border')
-      this.$emit('stay', false)
-      return (this.womenMenu = false)
+      document.getElementById("header").classList.remove("bot-border");
+      this.$emit("stay", false);
+      return (this.womenMenu = false);
     },
     menMenuMouseOver() {
-      document.getElementById('header').classList.add('bot-border')
-      this.$emit('stay', true)
-      return (this.menMenu = true)
+      document.getElementById("header").classList.add("bot-border");
+      this.$emit("stay", true);
+      return (this.menMenu = true);
     },
     menMenuMouseLeave() {
-      document.getElementById('header').classList.remove('bot-border')
-      this.$emit('stay', false)
-      return (this.menMenu = false)
+      document.getElementById("header").classList.remove("bot-border");
+      this.$emit("stay", false);
+      return (this.menMenu = false);
     },
     searchClick() {
-      this.iconStatus = 'search'
-      console.log(this.iconStatus)
+      this.iconStatus = "search";
+      console.log(this.iconStatus);
     },
     cartClick() {
-      this.iconStatus = 'cart'
+      this.iconStatus = "cart";
     },
     loginClick() {
-      this.iconStatus = 'login'
-    },
-  },
-}
+      this.iconStatus = "login";
+    }
+  }
+};
 </script>
 <style scoped>
 .header {
@@ -213,7 +220,7 @@ export default {
   color: black;
 }
 .item-link::after {
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   background: #000;

@@ -61,7 +61,7 @@ export const listItem = [
                  prd21,
                image1:
                  prd22,
-               type: "glasses",
+               type: "sunglasses",
                salePercent: "",
                hotTag: "HOT",
                amount: 1,
@@ -212,7 +212,7 @@ export const listItem = [
                  prd111,
                image1:
                  prd112,
-               type: "SKIRT",
+               type: "SHIRT",
                salePercent: "10%",
                hotTag: "",
                amount: 1,

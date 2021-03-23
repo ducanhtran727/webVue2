@@ -2,7 +2,7 @@
   <div class="drop-Down">
     <div class="menu-dropDown" v-for="(item,index) in menuDropDown" :key="index">
         <router-link to="/" class="dropDown-title"><h5>{{ item.title }}</h5></router-link>
-        <router-link to="/" class="dropDown-detail"><p v-for="(value,i) in item.content" :key="i" >{{value}}</p></router-link>
+        <p v-for="(value,i) in item.content" :key="i" @click="filterProduct(value)" >{{value}}</p>
     </div>
     <div class="slider">
             <img :src="image" class="d-block w-100"/>     
@@ -12,24 +12,19 @@
 
 <script>
 export default {
-  props:['menuDropDown','image'],
+  props:['menuDropDown','image','gender'],
   data(){
     return {
-      items: [
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
-        }
-      ],
+      
     };
+  },
+  created(){
+    console.log(this.gender)
+  },
+  methods:{
+    filterProduct(item){
+      this.$router.push(`/${this.gender}/${item}`)
+    }
   }
 };
 </script>

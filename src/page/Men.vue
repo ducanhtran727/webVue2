@@ -1,11 +1,13 @@
 <template>
   <div>
+    <notifications group="cart" width="500" height="500" position="bottom right" />
     <div
       class="top-news"
       v-bind:style="{ backgroundImage: 'url(' + banner1 + ')' }"
     >
       <div class="box-title">
         <h1 class="title">MEN</h1>
+        <h2>{{params}}</h2>
         <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
       </div>
     </div>
@@ -13,12 +15,7 @@
       <div class="filter-type">
         <div class="title-type">Product Categories</div>
         <ul>
-          <li>Sunglasses</li>
-          <li>Backpack</li>
-          <li>Business bags</li>
-          <li>Hats</li>
-          <li>Shoes</li>
-          <li>Vest</li>
+          <li v-for="(item , index) in listType" :key="index" @click="filterType(item)">{{ item }}</li>
         </ul>
       </div>
       <div class="box-right">
@@ -44,6 +41,8 @@ export default {
   data() {
     return {
       banner1,
+      listType:['Sunglasses','Backpack','Bags','Hats','Shoes','Vest'],
+      params : this.$route.params.id
     }
   },
   components:{
@@ -51,12 +50,26 @@ export default {
   },
   computed:{
     menList(){
-      return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'men')
+     if(this.params){
+        const menList = this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'men')
+      return menList.filter(item => item.type.toLowerCase() === this.params.toLowerCase())
+     }else{
+       return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'men')
+     }
+    }
+  },
+  methods:{
+    filterType(item){
+      this.$router.push(`/men/${item}`)
+    }
+  },
+  watch:{
+    '$route'(to,from){
+      this.params = to.params.id
     }
   }
 }
 </script>
-
 <style scoped>
 .title-type {
   font-size: 20px;

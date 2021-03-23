@@ -1,6 +1,6 @@
 <template>
   <div>
-    <notifications group="cart" width="500" height="500" position="top right" />
+    <notifications group="cart" width="500" height="500" position="bottom right" />
     <home-banner></home-banner>
     <box-banner></box-banner>
     <div class="home-tab">
