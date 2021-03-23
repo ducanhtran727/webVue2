@@ -9,6 +9,7 @@
           <a class="item-link">WOMEN</a>
           <drop-down
             :menuDropDown="menuDropDownWomen"
+            :image="imgWomen"
             class="dropdown"
             v-show="womenMenu"
           ></drop-down>
@@ -23,6 +24,7 @@
           <a class="item-link">MEN</a>
           <drop-down
             :menuDropDown="menuDropDownMen"
+            :image="imgMen"
             class="dropdown"
             v-show="menMenu"
           ></drop-down>
@@ -76,7 +78,6 @@
     </template>
   </div>
 </template>
-
 <script>
 import search from '../assets/img/search-black-18dp.svg'
 import cart from '../assets/img/cart.svg'
@@ -98,19 +99,22 @@ export default {
         { title: 'BAGS', content: ['Backpack', 'Business Bags', 'Mini Bags'] },
         {
           title: 'READY-TO-WERE',
-          content: ['Vest', 'Hats', 'Pants', 'Jacket', 'Tops & Shirts'],
+          content: ['Vest', 'Hats', 'Pants', 'Jacket'],
         },
         { title: 'SHOES', content: ['Lace-Up Shoes'] },
       ],
       menuDropDownWomen: [
         {
           title: 'READY-TO-WERE',
-          content: ['Shirst', 'Bikini', 'Pant', 'Dress', 'Tote Bags'],
+          content: ['Shirst', 'Bikini', 'Pant', 'Dress'],
         },
-        { title: 'HAND BAGS', content: ['Top Hand Bags', 'Tote Hand Bags'] },
+        { title: 'HAND BAGS', content: ['Top Hand Bags',] },
         { title: 'ACCESSTORIS', content: ['Sunglasses'] },
-        { title: 'JACKET', content: ['Classic Toper'] },
+        { title: 'JACKET', content: ['jacket'] },
       ],
+      imgMen:'https://www.louisvuitton.com/images/louis-vuitton--M_Fa_RW_mens_summer_21_DI3.jpg?wid=1080',
+      imgWomen:'https://www.louisvuitton.com/images/louis-vuitton--W_Fa_LG_Womens_2021_Summer_Collection_ME_DI3.jpg?wid=2048'
+
     }
   },
   components: {

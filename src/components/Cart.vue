@@ -7,7 +7,6 @@
     <div class="box-container">
       <div class="box-cart-title">
         <div class="cart-title">Cart</div>
-        <div class="cart-title">Whish List</div>
       </div>
       <div class="cart-list">
         <div class="cart-item">
@@ -204,7 +203,7 @@ export default {
 .cart-title {
   margin: 0 30px;
   color: gray;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 500;
   cursor: pointer;
   position: relative;

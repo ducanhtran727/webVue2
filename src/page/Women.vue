@@ -1,56 +1,132 @@
 <template>
-  <div class="top-news" v-bind:style="{ backgroundImage: 'url(' + banner3 + ')' }">
-    <div class="box-title">
-      <h1 class="title">WOMEN</h1>
-      <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
+  <div>
+    <div
+      class="top-news"
+      v-bind:style="{ backgroundImage: 'url(' + banner3 + ')' }"
+    >
+      <div class="box-title">
+        <h1 class="title">WOMEN</h1>
+        <router-link to="/" class="link-to-home"><p>HOME</p></router-link>
+      </div>
+    </div>
+    <div class="body-main">
+      <div class="filter-type">
+        <div class="title-type">Product Categories</div>
+        <ul>
+          <li>Sunglasses</li>
+          <li>Dress</li>
+          <li>Shirt</li>
+          <li>Bikini</li>
+          <li>Pants</li>
+          <li>Jacket</li>
+          <li>Bags</li>
+        </ul>
+      </div>
+      <div class="box-right">
+        <div class="sub-title">ALL Product</div>
+        <hr>
+        <div class="list-product">
+          <box-product  v-for="(item ,index) in womenList" :key="index" :product="item" :index="index"></box-product>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
+import boxProduct from '../components/boxProduct'
 import banner3 from '../assets/img/banner3.jpg'
 export default {
- data(){
-   return{
-     banner3
-   }
+  data() {
+    return {
+      banner3,
+    }
+  },
+  components:{
+    boxProduct
+  },
+  computed:{
+    womenList(){
+     return this.$store.state.productList.filter(item => item.gender.toLowerCase() === 'women')
+    }
+  },
+  created(){
+    console.log(this.womenList)
+  }
 
- }
-  
 }
 </script>
 <style scoped>
-  .link-to-home{
-    text-decoration: none;
-    color: black;
-  }
-  .top-news{
-    /* background-image: url('http://pe.heromc.net:3000/static/media/S3.7ad70116.jpg'); */
-    width: 100vw;
-    height: 70vh;
-    background-position: 50% 75%;
-    background-size: cover;
-    text-align: center;
-    padding-top: 25vh;
-  }
-  .title{
-    font-size: 70px;
-    font-weight: 500;
-  }
-  .new-tab{
-    display: flex;
-    justify-content: space-evenly;
-    width: 400px;
-    margin: 0 auto;
-  }
-  .new-tab p {
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .box-title{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-  }
+.title-type{
+  font-size: 20px;
+  font-weight: bold;
+}
+.sub-title{
+  font-size: 25px;
+  font-weight: 600;
+}
+.box-right{
+  text-align: center;
+  width: 115%;
+}
+.list-product{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.body-main{
+  display: flex;
+  margin: auto;
+  padding: 40px;
+}
+.filter-type{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.filter-type ul{
+  list-style: none;
+  padding: 0;
+  margin-top:20px;
+}
+.filter-type li {
+  padding: 20px 0;
+  cursor: pointer;
+  color: gray;
+}
+.filter-type li:hover{
+  text-decoration: underline;
+}
+.link-to-home {
+  text-decoration: none;
+  color: black;
+}
+.top-news {
+  width: 100vw;
+  height: 70vh;
+  background-position: 50% 75%;
+  background-size: cover;
+  text-align: center;
+  padding-top: 25vh;
+}
+.title {
+  font-size: 70px;
+  font-weight: 500;
+}
+.new-tab {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  margin: 0 auto;
+}
+.new-tab p {
+  font-weight: bold;
+  cursor: pointer;
+}
+.box-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
 </style>

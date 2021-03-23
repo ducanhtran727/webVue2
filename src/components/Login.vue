@@ -46,6 +46,7 @@ export default {
     loginForm,
     registerForm,
   },
+
 }
 </script>
 <style>

@@ -5,8 +5,6 @@
     <box-banner></box-banner>
     <div class="home-tab">
       <p class="tab-name">Best Seller</p>
-      <p class="tab-name">New Products</p>
-      <p class="tab-name">Sales Products</p>
     </div>
     <div class="product-list">
       <box-product
@@ -37,7 +35,7 @@ export default {
   },
   computed: {
     productList() {
-      return this.$store.state.productList
+      return this.$store.state.productList.slice(0,10)
     },
     newsList(){
       return this.$store.state.newsList
@@ -71,10 +69,10 @@ export default {
 }
 .tab-name {
   margin: 0 20px;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: bold;
   cursor: pointer;
-  color: #636e72;
+  color: black;
   position: relative;
 }
 .tab-name:hover {

@@ -35,7 +35,7 @@
 <script>
 export default {
   methods: {
-    onSubmit() {
+    onSubmit(){
       this.$notify({
         group: 'foo',
         type: 'success',

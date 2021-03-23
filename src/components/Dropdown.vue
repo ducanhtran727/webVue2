@@ -5,54 +5,15 @@
         <router-link to="/" class="dropDown-detail"><p v-for="(value,i) in item.content" :key="i" >{{value}}</p></router-link>
     </div>
     <div class="slider">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
-        interval="2000"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" class="d-block w-100"/>
-          </div>
-          <div class="carousel-item" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/sky.jpg" class="d-block w-100"/>
-          </div>
-          <div class="carousel-item" data-bs-interval="3000">
-            <img src="https://cdn.vuetifyjs.com/images/carousel/bird.jpg" class="d-block w-100"/>
-          </div>
-        </div>
-      </div>
+            <img :src="image" class="d-block w-100"/>     
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:['menuDropDown'],
-  data() {
+  props:['menuDropDown','image'],
+  data(){
     return {
       items: [
         {

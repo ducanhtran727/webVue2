@@ -87,10 +87,10 @@ export default {
   width: 100%;
 }
 
-.banner {
+/* .banner {
   height: 713px;
 
-}
+} */
 .carousel-item img{
   height: 100vh;
   width: 100%;
