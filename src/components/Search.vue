@@ -8,7 +8,7 @@
     <div class="search-container fadeUp">
       <div class="box-search">
         <img :src="iconSearch" />
-        <input placeholder="Search name product" type="text"  v-model="search"  />
+        <input placeholder="Search" type="text"  v-model="search"  />
       </div>
       <div class="product-filter" v-for="(item , index) in productFilter" :key="index">
         <div class="box-image">
@@ -53,7 +53,11 @@ export default {
   },
   computed:{
     productFilter(){
-        return this.$store.state.productList.filter(item => item.name.toLowerCase().indexOf(this.search ? this.search : null) > -1)   
+      if(this.search){
+        return this.$store.state.productList.filter(item => Object.values(item).join('').toLowerCase().trim().includes(this.search))
+      }else{
+        return null
+      }        
     }
   },
 }
